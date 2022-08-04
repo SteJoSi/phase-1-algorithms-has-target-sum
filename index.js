@@ -1,5 +1,14 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  for(let i = 0; i < array.length; i++) {
+    const complement = target - array[i];
+
+  for(let j = i + 1; j < array.length; j++) {
+    if(array[j] === complement)
+        return true
+    } 
+  }
+  return false;
 }
 
 /* 
@@ -8,10 +17,22 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+  hasTargetSum([1, 5, 7, 12, 15], 20) = returns true (15+5 = 20)
+
+  hasTargetSum([3, 8, 10, 18, 2], 27) = returns false (no two numbers added to create target number)
+
+  iterate through numbers in the array
+  if two numbers in the array adds up to target number,
+    return true
+  else return false
+
 */
 
 /*
   Add written explanation of your solution here
+  - Create a function that takes in an array and target parameters
+  - If two numbers in the array are added and their total is the target number, return true
+  - If there are no two numbers in the array that are added up to the target number, return false
 */
 
 // You can run `node index.js` to view these console logs
